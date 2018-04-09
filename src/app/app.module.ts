@@ -10,6 +10,23 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+//import AngularFireModule (install and config ) install angularfire2 --> npm install firebase angularfire2 --save
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+//import class register,loginPage
+import{RegisterPage} from '../pages/register/register';
+import{LoginPage} from '../pages/login/login'
+
+const firebaseAuth = {
+  apiKey: "AIzaSyDOPTzP3cQXyy2QsDJ4z1FiUnZbDvTmRY4",
+  authDomain: "cartorio-c86b4.firebaseapp.com",
+  databaseURL: "https://cartorio-c86b4.firebaseio.com",
+  projectId: "cartorio-c86b4",
+  storageBucket: "cartorio-c86b4.appspot.com",
+  messagingSenderId: "204016683419"
+};
+
+
 
 @NgModule({
   declarations: [
@@ -17,11 +34,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    RegisterPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    //import firebase (install and config )
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,7 +52,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    RegisterPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

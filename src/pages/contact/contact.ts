@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { LoginPage} from '../login/login';
+import { LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'page-contact',
@@ -7,8 +9,32 @@ import { NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public loadingCtrl: LoadingController,public navCtrl: NavController) {
 
   }
+
+  items = [
+    'Perfil',
+    'Configuração',
+    'Sair'
+          ];
+
+    presentLoading(message:string) {
+      let loader = this.loadingCtrl.create({
+        content: message,
+        duration: 2000
+      });
+      loader.present();
+    }
+        
+
+logOut(item:string){
+  if(item == 'Sair'){
+  this.presentLoading('Até Logo!');
+  this.navCtrl.push(LoginPage);
+  }else{
+    console.log(item);
+  }
+}
 
 }

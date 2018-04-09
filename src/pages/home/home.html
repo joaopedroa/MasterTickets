@@ -1,17 +1,32 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
+    <ion-title>Solicitação de Senhas</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+    
+  <ion-slides pager>
+     
+    <ion-slide >
+      <h2>Reconhecimento de Firma</h2>
+      <button block ion-button  item-left>Retirar Senha</button>
+    </ion-slide>
+  
+    <ion-slide >
+      <h2>Procuração</h2>
+      <button block ion-button  item-left>Retirar Senha</button>
+    </ion-slide>
+  
+    <ion-slide >
+      <h2>Registro civil</h2>
+      <button block ion-button  item-left>Retirar Senha</button>
+    </ion-slide>
+
+    <ion-slide >
+        <h2>Escritura</h2>
+        <button block ion-button  item-left>Retirar Senha</button>
+    </ion-slide>
+  
+  </ion-slides>
 </ion-content>
